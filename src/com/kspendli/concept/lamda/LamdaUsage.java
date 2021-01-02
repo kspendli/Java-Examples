@@ -1,7 +1,8 @@
-package com.kspendli.examples;
+package com.kspendli.concept.lamda;
+
+import com.kspendli.concept.Employee;
 
 import java.util.*;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.*;
@@ -80,13 +81,14 @@ public class LamdaUsage {
 
     private static void totalSalaryCount(List<Employee> employeeList) {
         long totalAmount = employeeList.stream()
-                .map(e->e.getSalary()).reduce(0,Integer::sum);
+                .map(e->e.getSalary())
+                .reduce(0,Integer::sum);
         System.out.println("TotalEmployees Salary Count: "+totalAmount);
     }
 
     private static void countOnSalaryLimit(List<Employee> employeeList, int sal) {
-        long count = employeeList.stream().
-                filter(employee -> employee.getSalary() > sal)
+        long count = employeeList.stream()
+                .filter(employee -> employee.getSalary() > sal)
                 .map(e->e.getSalary())
                 .collect(Collectors.counting());
         System.out.println("Total Count give limit salary employees: "+count);
@@ -94,7 +96,7 @@ public class LamdaUsage {
 
     private static void employeesBasedAge(List<Employee> employeeList) {
         Map<Integer, List<Employee>> empByAgeGroup = employeeList.stream()
-                .collect(groupingBy(Employee::getAge)); // Simple Grouping
+                                                    .collect(groupingBy(Employee::getAge)); // Simple Grouping
         System.out.println("Employees Based On Age Group: "+empByAgeGroup);
     }
 

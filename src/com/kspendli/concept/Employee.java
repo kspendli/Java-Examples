@@ -1,4 +1,4 @@
-package com.kspendli.examples;
+package com.kspendli.concept;
 
 public class Employee {
     private int eid;
@@ -56,7 +56,7 @@ public class Employee {
         this.salary = salary;
     }
 
-    Employee(int eid, String firstName, String lastName, int age, int exp, int salary){
+    public Employee(int eid, String firstName, String lastName, int age, int exp, int salary){
         this.eid = eid;
         this.firstName = firstName;
         this.lastName = lastName;

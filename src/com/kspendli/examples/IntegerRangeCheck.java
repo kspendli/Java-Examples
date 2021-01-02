@@ -4,15 +4,12 @@ import java.util.Scanner;
 
 //Print a given number is fit in possible data types
 public class IntegerRangeCheck {
-        public static void main(String []args)
-        {
+        public static void main(String []args){
             Scanner sc = new Scanner(System.in);
             int t=sc.nextInt();
 
-            for(int i=0;i<t;i++)
-            {
-                try
-                {
+            for(int i=0;i<t;i++) {
+                try{
                     long x=sc.nextLong();
                     System.out.println(x+" can be fitted in:");
                     if(x>=-128 && x<=127)
@@ -23,12 +20,9 @@ public class IntegerRangeCheck {
                         System.out.println("* int");
                     if(x >= (-Math.pow(2, 63)) && x <=(Math.pow(2, 63)-1))
                         System.out.println("* long");
-                }
-                catch(Exception e)
-                {
+                }catch(Exception e){
                     System.out.println(sc.next()+" can't be fitted anywhere.");
                 }
-
             }
         }
 }

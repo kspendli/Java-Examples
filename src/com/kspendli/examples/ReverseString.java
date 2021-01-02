@@ -14,7 +14,6 @@ public class ReverseString {
             reChars[index] = inChars[i];
             index++;
         }
-
         return new String(reChars);
     }
 
